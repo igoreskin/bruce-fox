@@ -1,0 +1,20 @@
+* {
+    font-size: 12px;
+}
+
+.btn.btn-success {
+    background-color:#28bba2;
+    border: none;
+    border-radius: 0px;
+    margin: -7px 0px;
+    float: right;
+    /* max-height: 10px;; */
+}
+
+.show-entries {
+    font-weight: bold;
+}
+
+.col-sm-3, .col-sm-2 {
+    padding: 0; 
+}

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <ol class="breadcrumb">
+    <li><a href="#" style="color: blue; font-weight: bold">Task Details</a></li>
+    <!-- <li><a href="#">Library</a></li> -->
+    <!-- <li class="active">Data</li> -->
+    <a href="#" class="btn btn-success">
+      <span class="glyphicon glyphicon-list"></span> Add Task</a>
+  </ol>
+
+  <div class="row">
+  <!-- <form> -->
+    <div class="col-sm-4"><span class="show-entries">Show </span> 
+      <select name="entries" (change)="onClick()">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select><span class="show-entries"> entries</span>
+    </div>
+    <!-- <input type="submit"> -->
+  <!-- </form> -->
+
+    <div class="col-sm-3"><span>Order by </span> 
+      <select name="contact" (change)="onClick()">
+        <option value="">Contact Name</option>
+        <option value="contact-1">Contact 1</option>
+        <option value="contact-2">Contact 2</option>
+        <option value="contact-3">Contact 3</option>
+      </select>
+    </div>
+
+    <div class="col-sm-2">
+      <span>Descending: </span>
+      <input type="checkbox" (change)="onClick()">
+    </div>
+
+    <div class="col-sm-3">
+      <span>Search: </span>
+      <input type="text" size="18" (keyup)="onKey($event)">
+    </div>
+  
+  </div>
+
+</div>
+
+
+
+  <!-- <div class="btn-group">
+      <button type="button" class="btn btn-default btn-sm">Action</button>
+      <button type="button" data-toggle="dropdown" class="btn btn-default btn-sm dropdown-toggle"><span class="caret"></span></button>
+      <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+      </ul>
+  </div> -->
