@@ -1,0 +1,16 @@
+* {
+    font-size: 12px;
+}
+
+hr {
+    height: 2px;
+    background-color: #dedede;
+}
+
+nav {
+    margin-top: -30px;
+}
+
+.col-sm-5 {
+    text-align: right;
+}
