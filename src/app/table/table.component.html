@@ -26,7 +26,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let quote of quoteinfo">
+        <tr *ngFor="let quote of quoteinfo, let i = index">
           <td>{{quote.quotetype}}</td>
           <td>{{quote.quotenumber}}</td>
           <td>{{quote.contact}}</td>
@@ -34,7 +34,7 @@
           <td>{{quote.duedate}}</td>
           <td>{{quote.tasktype}}</td>
           <td><span class="glyphicon glyphicon-eye-open"></span></td>
-          <td><span class="glyphicon glyphicon-edit"></span></td>
+          <td><span class="glyphicon glyphicon-edit"  data-toggle="modal" data-target="#myModal"></span></td>
           <td><span class="glyphicon glyphicon-cloud"></span></td>
         </tr>
         <!-- <tr>
@@ -48,20 +48,25 @@
           <td><span class="glyphicon glyphicon-eye-open"></span></td>
           <td><span class="glyphicon glyphicon-edit"></span></td>
           <td><span class="glyphicon glyphicon-cloud"></span></td>
-        </tr>
-        <tr>
-          <td>BF</td>
-          <td>213</td>
-          <td>Some contact</td>
-          <td>DYR Quote ID 213, Due Date Dec 23 2015 10:28 AM, 
-              Customer - Semmitworks Technologies Inc, Contact - Anand D</td>
-          <td>12/23/2015 10:28</td>
-          <td>Follow-up</td>
-          <td><span class="glyphicon glyphicon-eye-open"></span></td>
-          <td><span class="glyphicon glyphicon-edit"></span></td>
-          <td><span class="glyphicon glyphicon-cloud"></span></td>
         </tr> -->
       </tbody>
     </table>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <p>This is a large modal.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 </div>
