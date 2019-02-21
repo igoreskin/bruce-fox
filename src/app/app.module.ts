@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TableComponent } from './table/table.component';
 import { FooterComponent } from './footer/footer.component';
+import { TableService } from './services/table.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [TableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

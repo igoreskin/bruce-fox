@@ -26,7 +26,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let quote of quoteinfo">
+          <td>{{quote.quotetype}}</td>
+          <td>{{quote.quotenumber}}</td>
+          <td>{{quote.contact}}</td>
+          <td>{{quote.task}}</td>
+          <td>{{quote.duedate}}</td>
+          <td>{{quote.tasktype}}</td>
+          <td><span class="glyphicon glyphicon-eye-open"></span></td>
+          <td><span class="glyphicon glyphicon-edit"></span></td>
+          <td><span class="glyphicon glyphicon-cloud"></span></td>
+        </tr>
+        <!-- <tr>
           <td>DYR</td>
           <td>145</td>
           <td>Some contact</td>
@@ -49,7 +60,7 @@
           <td><span class="glyphicon glyphicon-eye-open"></span></td>
           <td><span class="glyphicon glyphicon-edit"></span></td>
           <td><span class="glyphicon glyphicon-cloud"></span></td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
 
