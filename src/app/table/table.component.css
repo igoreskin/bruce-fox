@@ -13,7 +13,7 @@ table {
 .container-fluid {
     flex-grow: 1;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     padding: 0;
     margin-top: -15px;
     margin-left: -15px;
@@ -25,4 +25,13 @@ table {
     background-color: #035881;
     height: 30px;
     /* min-width: 100%; */
+}
+
+.btn.btn-success {
+    background-color:#28bba2;
+    border: none;
+    border-radius: 0px;
+    margin: 10px 20px 15px 0px;
+    float: right;
+    /* max-height: 10px;; */
 }
