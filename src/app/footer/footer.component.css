@@ -14,3 +14,8 @@ nav {
 .col-sm-5 {
     text-align: right;
 }
+
+.container-fluid {
+    margin-left: -25px;
+    margin-right: -25px;
+}

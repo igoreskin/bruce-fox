@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import { HttpErrorResponse } from '@angular/common/http';
+import * as $ from 'jquery';
 
 import { TableService } from '../services/table.service';
 
@@ -24,6 +25,10 @@ export class TableComponent implements OnInit {
 
   onClick() {
     console.log("Clicked!!!!")
+  }
+
+  getDate() {
+    $('#datetimepicker1').datetimepicker();
   }
 
 }
