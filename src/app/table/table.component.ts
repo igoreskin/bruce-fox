@@ -33,6 +33,11 @@ export class TableComponent implements OnInit {
     console.log(this.quote)
   }
 
+  statusClick(event) {
+    event.preventDefault();
+    console.log(event.target.value)
+  }
+
   // getDate() {
   //   $('#datetimepicker1').datetimepicker();
   // }

@@ -20,9 +20,9 @@ export class TableService {
       this.httpService.get("../assets/seed-data.json").subscribe(
         data => {
           this.quoteinfo = data as string[];
-          console.log(this.quoteinfo);
-          console.log(this.quoteinfo[0]);
-          console.log(JSON.stringify(this.quoteinfo))
+          // console.log(this.quoteinfo);
+          // console.log(this.quoteinfo[0]);
+          // console.log(JSON.stringify(this.quoteinfo))
           localStorage.setItem('quotes', JSON.stringify(this.quoteinfo))
         },
         (err: HttpErrorResponse) => {
@@ -30,9 +30,9 @@ export class TableService {
         }
       )
     } else {
-      console.log(localStorage.length)
+      // console.log(localStorage.length)
       this.quoteinfo = JSON.parse(localStorage.getItem('quotes'));
-      console.log(this.quoteinfo);
+      // console.log(this.quoteinfo);
       
     }
   }
