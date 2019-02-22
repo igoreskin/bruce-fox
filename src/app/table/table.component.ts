@@ -16,6 +16,7 @@ export class TableComponent implements OnInit {
 
   constructor(private httpService: HttpClient, private tableService: TableService) { }
   quoteinfo: any;
+  quote: string;
 
 
   ngOnInit() {
@@ -27,8 +28,13 @@ export class TableComponent implements OnInit {
     console.log("Clicked!!!!")
   }
 
-  getDate() {
-    $('#datetimepicker1').datetimepicker();
+  getQuote(num) {
+    this.quote = this.quoteinfo[num];
+    console.log(this.quote)
   }
+
+  // getDate() {
+  //   $('#datetimepicker1').datetimepicker();
+  // }
 
 }
