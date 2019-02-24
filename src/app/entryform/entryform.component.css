@@ -23,11 +23,15 @@
     background-color:#28bba2;
     border: none;
     border-radius: 0px;
-    margin: 10px 20px 15px 0px;
+    margin: 10px 15px 15px 0px;
     float: right;
     /* max-height: 10px;; */
 }
 
 .time {
     margin-top: -23px;
+}
+
+.buttons {
+    margin-right: 60px;
 }
