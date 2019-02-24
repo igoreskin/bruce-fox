@@ -115,21 +115,10 @@
                     <div class="form-group">
                       <label for="duedate" class="col-sm-2 control-label">Due Date</label>
 
-                      <div class='input-group date col-sm-4' id='datetimepicker1'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar" style="cursor:pointer" (click)="getDate()"></span>
-                        </span>
-                    </div>
-                    <!-- <script type="text/javascript">
-                      $(function () {
-                          $('#datetimepicker1').datetimepicker();
-                      });  
-                    </script> -->
-
-                      <!-- <div class="col-sm-6">
-                        <input type="text" class="form-control" id="duedate" placeholder="">
-                      </div> -->
+                      <div class="col-md-4">
+                        <input type="text" placeholder="Due Date" class="form-control" value="{{quote.duedate}}" bsDatepicker>
+                      </div>
+                      <div class="col-sm-2 time"><timepicker></timepicker></div>
 
                     </div>
 

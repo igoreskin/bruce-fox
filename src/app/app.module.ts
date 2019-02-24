@@ -11,18 +11,25 @@ import { FooterComponent } from './footer/footer.component';
 import { TableService } from './services/table.service';
 import { AppRoutingModule } from './app-routing.module';
 
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { EntryformComponent } from './entryform/entryform.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TableComponent,
-    FooterComponent
+    FooterComponent,
+    EntryformComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     // RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BsDatepickerModule.forRoot(),
+    TimepickerModule.forRoot()
   ],
   providers: [TableService],
   bootstrap: [AppComponent]

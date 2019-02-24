@@ -38,8 +38,4 @@ export class TableComponent implements OnInit {
     console.log(event.target.value)
   }
 
-  // getDate() {
-  //   $('#datetimepicker1').datetimepicker();
-  // }
-
 }
