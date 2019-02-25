@@ -37,7 +37,7 @@ export class TableService {
     }
   }
 
-  updateData() {
+  updateData(object) {
 
   }
 
