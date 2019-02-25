@@ -18,7 +18,6 @@ export class EntryformComponent implements OnInit {
   taskdescription = '';
   submitted = false;
 
-
   // onSubmit(form: NgForm) {
   //   console.log(form)
   // }
