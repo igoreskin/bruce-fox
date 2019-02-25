@@ -21,6 +21,8 @@ export class TableComponent implements OnInit {
 
   entryData: any;
 
+  idx: any;
+
   quotetype = '';
   quotenumber = '';
   tasktype = '';
@@ -45,7 +47,8 @@ export class TableComponent implements OnInit {
 
   getQuote(num) {
     this.quoterow = this.quoteinfo[num];
-    console.log(this.quoterow)
+    console.log(this.quoterow);
+    this.idx = num;
   }
 
   statusClick(event) {
@@ -54,6 +57,7 @@ export class TableComponent implements OnInit {
   }
 
   onSubmit() {
+    // console.log(this.entryForm);  
     this.submitted = true;
     
     this.quotetype = this.entryForm.value.quotetype;
@@ -74,19 +78,15 @@ export class TableComponent implements OnInit {
       task: this.task
     }
 
-    console.log(this.entryData)
-
-    // let n = local.get
-    // n.push(this.entryData);
-    // localStorage.setit('',json.)
-
-
-    this.tableService.updateData(this.entryData);
+    // console.log(this.entryData, this.idx)
+    console.log(this.duedate)
+    console.log(this.entryForm);
+    this.tableService.updateData(this.entryData, this.idx);
 
 
     // alert(this.entryData.quotenumber);
 
-    this.entryForm.reset();
+    // this.entryForm.reset();
   }
 
 }

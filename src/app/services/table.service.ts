@@ -37,8 +37,9 @@ export class TableService {
     }
   }
 
-  updateData(object) {
-
+  updateData(object, i) {
+    this.quoteinfo.splice(i, 1, object);
+    localStorage.setItem('quotes', JSON.stringify(this.quoteinfo));
   }
 
 }
