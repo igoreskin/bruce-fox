@@ -26,13 +26,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let quote of quoteinfo, let i = index">
-        <td>{{quote.quotetype}}</td>
-        <td>{{quote.quotenumber}}</td>
-        <td>{{quote.contact}}</td>
-        <td>{{quote.task}}</td>
-        <td>{{quote.duedate}}</td>
-        <td>{{quote.tasktype}}</td>
+      <tr *ngFor="let quoterow of quoteinfo, let i = index">
+        <td>{{quoterow.quotetype}}</td>
+        <td>{{quoterow.quotenumber}}</td>
+        <td>{{quoterow.contact}}</td>
+        <td>{{quoterow.task}}</td>
+        <td>{{quoterow.duedate}}</td>
+        <td>{{quoterow.tasktype}}</td>
         <td><span class="glyphicon glyphicon-eye-open"></span></td>
         <td><span class="glyphicon glyphicon-edit" data-toggle="modal" 
           data-target="#myModal" (click)="getQuote(i)" style="cursor:pointer"></span></td>
@@ -69,7 +69,7 @@
               </ol>
 
               <div>
-                <form class="form-horizontal">
+                <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">
                     <div class="form-group">
                       <label for="status" class="col-sm-2 control-label">Status</label>
                       <div class="col-sm-4">
@@ -83,32 +83,36 @@
                     <div class="form-group">
                       <label for="quotetype" class="col-sm-2 control-label">Quote Type</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="quotetype" value="{{quote.quotetype}}">
+                        <input type="text" class="form-control" id="quotetype" value="{{quoterow.quotetype}}" 
+                        ngModel name="quotetype" required>
                       </div>
                       <label for="quotenumber" class="col-sm-2 control-label">Quote Num</label>
                       <div class="col-sm-2">
-                        <input type="text" class="form-control" id="quotenumber" value="{{quote.quotenumber}}">
+                        <input type="text" class="form-control" id="quotenumber" value="{{quoterow.quotenumber}}" 
+                        ngModel name="quotenumber" required>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="tasktype" class="col-sm-2 control-label">Task Type</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="tasktype" value="{{quote.tasktype}}">
+                        <input type="text" class="form-control" id="tasktype" value="{{quoterow.tasktype}}" 
+                        ngModel name="tasktype" required>
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="contactname" class="col-sm-2 control-label">Contact Name</label>
+                      <label for="contact" class="col-sm-2 control-label">Contact Name</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="contactname" value="{{quote.contact}}">
+                        <input type="text" class="form-control" id="contact" value="{{quoterow.contact}}" 
+                        ngModel name="contact" required>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="quote" class="col-sm-2 control-label">Quote</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="quote" placeholder="Quote">
+                        <input type="text" class="form-control" id="quote" placeholder="Quote" ngModel name="quote">
                       </div>
                     </div>
 
@@ -116,16 +120,19 @@
                       <label for="duedate" class="col-sm-2 control-label">Due Date</label>
 
                       <div class="col-md-4">
-                        <input type="text" placeholder="Due Date" class="form-control" value="{{quote.duedate}}" bsDatepicker>
+                        <input type="text" placeholder="Due Date" class="form-control" 
+                        value="{{quoterow.duedate}}" ngModel name="duedate" bsDatepicker 
+                        [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY, h:mm:ss a' }" required>
                       </div>
                       <div class="col-sm-2 time"><timepicker></timepicker></div>
 
                     </div>
 
                     <div class="form-group">
-                      <label for="taskdescription" class="col-sm-2 control-label">Task Description</label>
+                      <label for="task" class="col-sm-2 control-label">Task Description</label>
                       <div class="col-sm-9">
-                        <textarea rows="5" type="text" class="form-control" id="taskdescription" value="">{{quote.task}}</textarea>
+                        <textarea rows="5" type="text" class="form-control" id="task" value="" 
+                        ngModel name="taks" required>{{quoterow.task}}</textarea>
                       </div>
                     </div>
 
@@ -137,7 +144,7 @@
 
                     <div class="row buttons">
                       <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-remove"></span> Cancel</a>
-                      <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Update</a>
+                      <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Update</button>
                     </div>
                   </form> 
                 </div>

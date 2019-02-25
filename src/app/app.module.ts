@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { TableComponent } from './table/table.component';
 import { FooterComponent } from './footer/footer.component';
 import { TableService } from './services/table.service';
+import { EntryformService } from './services/entryform.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -33,7 +34,7 @@ import { EntryformComponent } from './entryform/entryform.component';
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot()
   ],
-  providers: [TableService],
+  providers: [TableService, EntryformService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

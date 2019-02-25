@@ -38,9 +38,9 @@
               </div>
 
               <div class="form-group">
-                <label for="contactname" class="col-sm-2 control-label">Contact Name</label>
+                <label for="contact" class="col-sm-2 control-label">Contact Name</label>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" id="contactname" ngModel name="contactname" placeholder="Contact Name" required>
+                  <input type="text" class="form-control" id="contact" ngModel name="contact" placeholder="Contact Name" required>
                 </div>
               </div>
 
@@ -55,17 +55,18 @@
                 <label for="duedate" class="col-sm-2 control-label">Due Date</label>
 
                 <div class="col-md-4">
-                  <input type="text" placeholder="Due Date" class="form-control" ngModel name="duedate" bsDatepicker required>
+                  <input type="text" placeholder="Due Date" class="form-control" 
+                  ngModel name="duedate" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY, h:mm:ss a' }" required>
                 </div>
                 <div class="col-sm-4 time"><timepicker></timepicker></div>
 
               </div>
 
               <div class="form-group">
-                <label for="taskdescription" class="col-sm-2 control-label">Task Description</label>
+                <label for="task" class="col-sm-2 control-label">Task Description</label>
                 <div class="col-sm-9">
-                  <textarea rows="5" type="text" class="form-control" id="taskdescription"
-                    placeholder="Task Description" ngModel name="taskdescription" required></textarea>
+                  <textarea rows="5" type="text" class="form-control" id="task"
+                    placeholder="Task Description" ngModel name="task" required></textarea>
                 </div>
               </div>
 
