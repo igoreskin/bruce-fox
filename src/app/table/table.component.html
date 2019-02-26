@@ -26,7 +26,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let quoterow of quoteinfo, let i = index">
+      <tr *ngFor="let quoterow of quoteinfo | paginate: { itemsPerPage: 10, currentPage: page } let i = index">
         <td>{{quoterow.quotetype}}</td>
         <td>{{quoterow.quotenumber}}</td>
         <td>{{quoterow.contact}}</td>
@@ -160,4 +160,8 @@
         </div>
       </div>
 
+</div>
+
+<div class="has-text-centered">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>

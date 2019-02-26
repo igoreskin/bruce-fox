@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 // import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -32,7 +33,8 @@ import { EntryformComponent } from './entryform/entryform.component';
     // RouterModule,
     AppRoutingModule,
     BsDatepickerModule.forRoot(),
-    TimepickerModule.forRoot()
+    TimepickerModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [TableService, EntryformService],
   bootstrap: [AppComponent]
