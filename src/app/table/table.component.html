@@ -53,7 +53,7 @@
     </tbody>
   </table>
 
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <!-- <div class="modal-header">
@@ -68,7 +68,7 @@
                 <li style="color: white; font-weight: bold">Task Details</li>
               </ol>
 
-              <div>
+              <div *ngIf="quoterow">
                 <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">
                     <div class="form-group">
                       <label for="status" class="col-sm-2 control-label">Status</label>
@@ -83,29 +83,28 @@
                     <div class="form-group">
                       <label for="quotetype" class="col-sm-2 control-label">Quote Type</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="quotetype" value="{{quoterow.quotetype}}" 
-                        ngModel name="quotetype" required>
+                        <input type="text" class="form-control" id="quotetype" [ngModel]="quoterow.quotetype" name="quotetype" required>
                       </div>
                       <label for="quotenumber" class="col-sm-2 control-label">Quote Num</label>
                       <div class="col-sm-2">
-                        <input type="text" class="form-control" id="quotenumber" value="{{quoterow.quotenumber}}" 
-                        ngModel name="quotenumber" required>
+                        <input type="text" class="form-control" id="quotenumber"  
+                        [(ngModel)]="quoterow.quotenumber" name="quotenumber" required>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="tasktype" class="col-sm-2 control-label">Task Type</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="tasktype" value="{{quoterow.tasktype}}" 
-                        ngModel name="tasktype" required>
+                        <input type="text" class="form-control" id="tasktype"
+                        [(ngModel)]="quoterow.tasktype" name="tasktype" required>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="contact" class="col-sm-2 control-label">Contact Name</label>
                       <div class="col-sm-4">
-                        <input type="text" class="form-control" id="contact" value="{{quoterow.contact}}" 
-                        ngModel name="contact" required>
+                        <input type="text" class="form-control" id="contact" 
+                        [(ngModel)]="quoterow.contact" name="contact" required>
                       </div>
                     </div>
 
@@ -121,7 +120,7 @@
 
                       <div class="col-md-4">
                         <input type="text" placeholder="Due Date" class="form-control" 
-                        value="{{quoterow.duedate}}" ngModel name="duedate" bsDatepicker 
+                        [(ngModel)]="quoterow.duedate" name="duedate" bsDatepicker 
                         [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY, h:mm:ss a' }" required>
                       </div>
                       <div class="col-sm-2 time"><timepicker></timepicker></div>
@@ -132,7 +131,7 @@
                       <label for="task" class="col-sm-2 control-label">Task Description</label>
                       <div class="col-sm-9">
                         <textarea rows="5" type="text" class="form-control" id="task"
-                        ngModel name="task">{{quoterow.task}}</textarea>
+                        [(ngModel)]="quoterow.task" name="task"></textarea>
                       </div>
                     </div>
 
@@ -143,7 +142,7 @@
                     </div> -->
 
                     <div class="row buttons">
-                      <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-remove"></span> Cancel</a>
+                      <button class="btn btn-success" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                       <button class="btn btn-success" type='submit'><span class="glyphicon glyphicon-refresh"></span> Update</button>
                     </div>
                   </form> 

@@ -33,8 +33,8 @@ export class TableComponent implements OnInit {
   submitted = false;
 
   quoteinfo: any;
-  quoterow: string;
-
+  quoterow: any;
+  
 
   ngOnInit() {
     this.tableService.getData();
@@ -57,6 +57,7 @@ export class TableComponent implements OnInit {
   }
 
   onSubmit() {
+    // debugger;
     // console.log(this.entryForm);  
     this.submitted = true;
     
@@ -81,12 +82,18 @@ export class TableComponent implements OnInit {
     // console.log(this.entryData, this.idx)
     console.log(this.duedate)
     console.log(this.entryForm);
-    this.tableService.updateData(this.entryData, this.idx);
+    this.quoteinfo[this.idx] = this.entryData;
+    // debugger;
+    localStorage.setItem('quotes', JSON.stringify(this.quoteinfo));
+    // this.tableService.updateData(this.entryData, this.idx);
 
 
     // alert(this.entryData.quotenumber);
-
+    $('#myModal').hide();
+//     $('body').removeClass('modal-open');
+// $('.modal-backdrop').remove();
     // this.entryForm.reset();
+    // location.reload();
   }
 
 }
