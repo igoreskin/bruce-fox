@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 // import { HttpErrorResponse } from '@angular/common/http';
 import * as $ from 'jquery';
+// declare var $:any;
 
 import { TableService } from '../services/table.service';
 
@@ -86,14 +87,14 @@ export class TableComponent implements OnInit {
     // debugger;
     localStorage.setItem('quotes', JSON.stringify(this.quoteinfo));
     // this.tableService.updateData(this.entryData, this.idx);
-
-
-    // alert(this.entryData.quotenumber);
+   
     $('#myModal').hide();
-//     $('body').removeClass('modal-open');
-// $('.modal-backdrop').remove();
-    // this.entryForm.reset();
-    // location.reload();
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+    this.entryForm.reset();
+    location.reload();
   }
+
+
 
 }
