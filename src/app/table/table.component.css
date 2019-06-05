@@ -43,3 +43,13 @@ table {
 .buttons {
     margin-right: 58px;
 }
+
+.paginate {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    height: 2px;
+    background-color: #dedede;
+}

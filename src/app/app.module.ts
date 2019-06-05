@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 // import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TableComponent } from './table/table.component';
 import { FooterComponent } from './footer/footer.component';
 import { TableService } from './services/table.service';
+import { EntryformService } from './services/entryform.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -31,9 +33,10 @@ import { EntryformComponent } from './entryform/entryform.component';
     // RouterModule,
     AppRoutingModule,
     BsDatepickerModule.forRoot(),
-    TimepickerModule.forRoot()
+    TimepickerModule.forRoot(),
+    NgxPaginationModule
   ],
-  providers: [TableService],
+  providers: [TableService, EntryformService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

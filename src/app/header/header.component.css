@@ -7,7 +7,9 @@
     /* width: 100%; */
     margin-left: -25px;
     margin-right: -25px;
+    /* position: fixed; */
 }
+
 
 .btn.btn-success {
     background-color:#28bba2;

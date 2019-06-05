@@ -22,32 +22,37 @@
               <div class="form-group">
                 <label for="quotetype" class="col-sm-2 control-label">Quote Type</label>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" id="quotetype" ngModel name="quotetype" placeholder="Quote Type">
+                  <input type="text" class="form-control" id="quotetype" 
+                  ngModel name="quotetype" placeholder="Quote Type" required>
                 </div>
                 <label for="quotenumber" class="col-sm-2 control-label">Quote Num</label>
                 <div class="col-sm-2">
-                  <input type="text" class="form-control" id="quotenumber" ngModel name="quotenumber" placeholder="Quote Num">
+                  <input type="text" class="form-control" id="quotenumber" 
+                  ngModel name="quotenumber" placeholder="Quote Num" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="tasktype" class="col-sm-2 control-label">Task Type</label>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" id="tasktype" ngModel name="tasktype" placeholder="Task Type">
+                  <input type="text" class="form-control" id="tasktype" 
+                  ngModel name="tasktype" placeholder="Task Type" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="contactname" class="col-sm-2 control-label">Contact Name</label>
+                <label for="contact" class="col-sm-2 control-label">Contact Name</label>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" id="contactname" mgModel name="contactname" placeholder="Contact Name">
+                  <input type="text" class="form-control" id="contact" 
+                  ngModel name="contact" placeholder="Contact Name" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="quote" class="col-sm-2 control-label">Quote</label>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" id="quote" ngModel name="quote" placeholder="Quote">
+                  <input type="text" class="form-control" id="quote" 
+                  ngModel name="quote" placeholder="Quote">
                 </div>
               </div>
 
@@ -55,17 +60,18 @@
                 <label for="duedate" class="col-sm-2 control-label">Due Date</label>
 
                 <div class="col-md-4">
-                  <input type="text" placeholder="Due Date" class="form-control" ngModel name="duedate" bsDatepicker>
+                  <input type="text" placeholder="Due Date" class="form-control" 
+                  ngModel name="duedate" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY, h:mm:ss a' }" required>
                 </div>
                 <div class="col-sm-4 time"><timepicker></timepicker></div>
 
               </div>
 
               <div class="form-group">
-                <label for="taskdescription" class="col-sm-2 control-label">Task Description</label>
+                <label for="task" class="col-sm-2 control-label">Task Description</label>
                 <div class="col-sm-9">
-                  <textarea rows="5" type="text" class="form-control" id="taskdescription"
-                    placeholder="Task Description" ngModel name="taskdescription"></textarea>
+                  <textarea rows="5" type="text" class="form-control" id="task"
+                    placeholder="Task Description" ngModel name="task" required></textarea>
                 </div>
               </div>
 
@@ -77,8 +83,8 @@
 
               <div class="row buttons">
               <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-remove"></span> Cancel</a>
-              <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-open"></span> Submit</button>
-              <!-- <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-open"></span> Submit</a> -->
+              <button class="btn btn-success" type="submit" 
+              [disabled]="!f.valid"><span class="glyphicon glyphicon-open"></span> Submit</button>
               </div>
             </form>
           </div>
